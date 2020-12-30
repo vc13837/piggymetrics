@@ -8,10 +8,10 @@ node {
       stage('deploy') {
         withCredentials([azureServicePrincipal('azure_service_principal')]) {
           // login to Azure
-          sh '''
-            az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
-            az account set -s $AZURE_SUBSCRIPTION_ID
-          '''
+          //sh '''
+          //  az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+          //  az account set -s $AZURE_SUBSCRIPTION_ID
+          //'''
           // Set default resource group name and service name. Replace <resource group name> and <service name> with the right values
           sh 'az configure --defaults group=vince-rg'
           sh 'az configure --defaults spring-cloud=vince-spring-cloud'
